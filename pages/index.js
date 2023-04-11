@@ -16,10 +16,10 @@ import web22 from "../public/web22.png";
 import web33 from "../public/web33.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
-
+import Zoom from "react-reveal";
 import emailjs from "@emailjs/browser";
 import { useState, useRef } from "react";
-
+import Fade from "react-reveal/Fade";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -91,74 +91,81 @@ export default function Home() {
                                 </li>
                             </ul>
                         </nav>
-                        <div className="lg:flex justify-center align-middle">
-                            <div className="text-center lg:p-10 pb-10 ">
-                                <h2 className="text-5xl  py-2 text-teal-600 font-medium md:text-6xl ">
-                                    Blend Emini
-                                </h2>
-                                <h3 className="text-2xl py-2 md:text-3xl dark:text-teal-300">
-                                    Frontend Developer
-                                </h3>
-                                <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
-                                    {" "}
-                                    Experienced frontend developer with a
-                                    passion for creating intuitive and
-                                    user-friendly interfaces. Proficient in
-                                    HTML5, CSS, JavaScript, and various frontend
-                                    frameworks and Libraries such as React,
-                                    Next.Js,Tailwind and Bootstrap.
-                                </p>
+                        <Fade top>
+                            <div className="lg:flex justify-center align-middle">
+                                <div className="text-center lg:p-10 pb-10 ">
+                                    <h2 className="text-5xl  py-2 text-teal-600 font-medium md:text-6xl ">
+                                        Blend Emini
+                                    </h2>
+                                    <h3 className="text-2xl py-2 md:text-3xl dark:text-teal-300">
+                                        Frontend Developer
+                                    </h3>
+                                    <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
+                                        {" "}
+                                        Experienced frontend developer with a
+                                        passion for creating intuitive and
+                                        user-friendly interfaces. Proficient in
+                                        HTML5, CSS, JavaScript, and various
+                                        frontend frameworks and Libraries such
+                                        as React, Next.Js,Tailwind and
+                                        Bootstrap.
+                                    </p>
+                                </div>
+                                <div className="relative mx-auto bg-gradient-to-b from-slate-800 dark:from-teal-500 rounded-full overflow-hidden -mt-5 w-80 h-80 mt-15 md:h-96 md:w-96 ">
+                                    <Image
+                                        src={Blendi}
+                                        // layout="fill"
+                                        // objectFit="cover"
+                                    />
+                                </div>
                             </div>
-                            <div className="relative mx-auto bg-gradient-to-b from-slate-800 dark:from-teal-500 rounded-full overflow-hidden -mt-5 w-80 h-80 mt-15 md:h-96 md:w-96 ">
-                                <Image
-                                    src={Blendi}
-                                    // layout="fill"
-                                    // objectFit="cover"
-                                />
-                            </div>
-                        </div>
-                        <div className="text-5xl flex justify-center gap-16 py-3 text-gray-700 dark:text-white   ">
-                            <a href="https://www.linkedin.com/in/blend-emini-0b175125b/">
-                                <AiFillLinkedin />
-                            </a>
-                            <a href="https://github.com/BlendEmini">
-                                <AiFillGithub />
-                            </a>
+                            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-700 dark:text-white   ">
+                                <a href="https://www.linkedin.com/in/blend-emini-0b175125b/">
+                                    <AiFillLinkedin />
+                                </a>
+                                <a href="https://github.com/BlendEmini">
+                                    <AiFillGithub />
+                                </a>
 
-                            <a href="">
-                                <AiOutlineMail />
-                            </a>
-                        </div>
+                                <a href="">
+                                    <AiOutlineMail />
+                                </a>
+                            </div>
+                        </Fade>
                     </section>
                     <section className="md:flex adding-border-white lg:-mt-5 md:flex-col md:gap-10">
-                        <div className="text-center mt-8 ">
-                            <h3 className="text-3xl py-1 dark:text-white ">
-                                About Me
-                            </h3>
-                            <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
-                                Hi, I'm Blend Emini,im 21 Years Old and I study
-                                Computer Science (Bachelor Degree) and i started
-                                learning Html,Css and Js when i had practical
-                                work (from faculty) to do in local companies and
-                                since then i started focusing more and more in
-                                Frontend Development.Recently I successfully
-                                graduated in Frontend course at Jagaad Academy.
-                                For the last 12Months, I had the chance to work
-                                on variety of technologies on a daily basis,
-                                especially in the last 6 months since i got
-                                accepted in Jagaad Academy where i had a great
-                                chance to practice a large number of modern
-                                technologies and also lately i started learning
-                                Node.js,MongoDB and Express.
-                            </p>
-                            <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
-                                {" "}
-                                My current skills (for now) : ⚪ HTML ⚪ CSS ⚪
-                                SASS ⚪ Tailwind ⚪ Bootstrap ⚪ Javascript ⚪
-                                TypeScript ⚪ React ⚪ Redux ⚪ Next.js ⚪
-                                Docker.
-                            </p>
-                        </div>
+                        <Fade top>
+                            <div className="text-center mt-8 ">
+                                <h3 className="text-3xl py-1 dark:text-white ">
+                                    About Me
+                                </h3>
+                                <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
+                                    Hi, I'm Blend Emini,im 21 Years Old and I
+                                    study Computer Science (Bachelor Degree) and
+                                    i started learning Html,Css and Js when i
+                                    had practical work (from faculty) to do in
+                                    local companies and since then i started
+                                    focusing more and more in Frontend
+                                    Development.Recently I successfully
+                                    graduated in Frontend course at Jagaad
+                                    Academy. For the last 12Months, I had the
+                                    chance to work on variety of technologies on
+                                    a daily basis, especially in the last 6
+                                    months since i got accepted in Jagaad
+                                    Academy where i had a great chance to
+                                    practice a large number of modern
+                                    technologies and also lately i started
+                                    learning Node.js,MongoDB and Express.
+                                </p>
+                                <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
+                                    {" "}
+                                    My current skills (for now) : ⚪ HTML ⚪ CSS
+                                    ⚪ SASS ⚪ Tailwind ⚪ Bootstrap ⚪
+                                    Javascript ⚪ TypeScript ⚪ React ⚪ Redux
+                                    ⚪ Next.js ⚪ Docker.
+                                </p>
+                            </div>
+                        </Fade>
                     </section>
                     <section className="adding-border-white">
                         <div className="py-3">
