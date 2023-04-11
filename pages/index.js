@@ -220,7 +220,7 @@ export default function Home() {
                                     <div className="flex gap-2">
                                         <a
                                             href="https://github.com/BlendEmini/ecommerce-shop"
-                                            className="py-2 rounded-lg px-4 md:w-48 text-lg text-center text-white text-sm lg:text-xl button-border "
+                                            className="py-2 rounded-lg px-4 md:w-48 text-lg text-center text-white md:text-sm lg:text-xl button-border "
                                         >
                                             Project in Github
                                         </a>
@@ -314,7 +314,7 @@ export default function Home() {
                             </h2>{" "}
                             <p className="text-xl w-72 text-white ">
                                 If your interested in me or want to know more
-                                about me free to contact !
+                                about me feel free to contact !
                             </p>
                         </div>
                     </section>
