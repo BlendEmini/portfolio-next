@@ -19,9 +19,22 @@ import web5 from "../public/web5.png";
 
 import emailjs from "@emailjs/browser";
 import { useState, useRef } from "react";
-
+import { Fade } from "react-awesome-reveal";
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 const inter = Inter({ subsets: ["latin"] });
 
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+`;
 export default function Home() {
     const [darkMode, setDarkMode] = useState(true);
     const [emailAlert, setEmailAlert] = useState(false);
@@ -91,74 +104,80 @@ export default function Home() {
                                 </li>
                             </ul>
                         </nav>
-
-                        <div className="lg:flex justify-center align-middle">
-                            <div className="text-center lg:p-10 pb-10 ">
-                                <h2 className="text-5xl  py-2 text-teal-600 font-medium md:text-6xl ">
-                                    Blend Emini
-                                </h2>
-                                <h3 className="text-2xl py-2 md:text-3xl dark:text-teal-300">
-                                    Frontend Developer
-                                </h3>
-                                <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
-                                    {" "}
-                                    Experienced frontend developer with a
-                                    passion for creating intuitive and
-                                    user-friendly interfaces. Proficient in
-                                    HTML5, CSS, JavaScript, and various frontend
-                                    frameworks and Libraries such as React,
-                                    Next.Js,Tailwind and Bootstrap.
-                                </p>
+                        <Reveal keyframes={customAnimation}>
+                            <div className="lg:flex justify-center align-middle">
+                                <div className="text-center lg:p-10 pb-10 ">
+                                    <h2 className="text-5xl  py-2 text-teal-600 font-medium md:text-6xl ">
+                                        Blend Emini
+                                    </h2>
+                                    <h3 className="text-2xl py-2 md:text-3xl dark:text-teal-300">
+                                        Frontend Developer
+                                    </h3>
+                                    <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">
+                                        {" "}
+                                        Experienced frontend developer with a
+                                        passion for creating intuitive and
+                                        user-friendly interfaces. Proficient in
+                                        HTML5, CSS, JavaScript, and various
+                                        frontend frameworks and Libraries such
+                                        as React, Next.Js,Tailwind and
+                                        Bootstrap.
+                                    </p>
+                                </div>
+                                <div className="relative mx-auto bg-gradient-to-b from-slate-800 dark:from-teal-500 rounded-full overflow-hidden -mt-5 w-80 h-80 mt-15 md:h-96 md:w-96 ">
+                                    <Image
+                                        src={Blendi}
+                                        // layout="fill"
+                                        // objectFit="cover"
+                                    />
+                                </div>
                             </div>
-                            <div className="relative mx-auto bg-gradient-to-b from-slate-800 dark:from-teal-500 rounded-full overflow-hidden -mt-5 w-80 h-80 mt-15 md:h-96 md:w-96 ">
-                                <Image
-                                    src={Blendi}
-                                    // layout="fill"
-                                    // objectFit="cover"
-                                />
-                            </div>
-                        </div>
-                        <div className="text-5xl flex justify-center gap-16 py-3 text-gray-700 dark:text-white   ">
-                            <a href="https://www.linkedin.com/in/blend-emini-0b175125b/">
-                                <AiFillLinkedin />
-                            </a>
-                            <a href="https://github.com/BlendEmini">
-                                <AiFillGithub />
-                            </a>
+                            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-700 dark:text-white   ">
+                                <a href="https://www.linkedin.com/in/blend-emini-0b175125b/">
+                                    <AiFillLinkedin />
+                                </a>
+                                <a href="https://github.com/BlendEmini">
+                                    <AiFillGithub />
+                                </a>
 
-                            <a href="">
-                                <AiOutlineMail />
-                            </a>
-                        </div>
+                                <a href="">
+                                    <AiOutlineMail />
+                                </a>
+                            </div>
+                        </Reveal>
                     </section>
                     <section className="md:flex adding-border-white lg:-mt-5 md:flex-col md:gap-10">
                         <div className="text-center mt-8 ">
                             <h3 className="text-3xl py-1 dark:text-white ">
                                 About Me
                             </h3>
-                            <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
-                                Hi, I'm Blend Emini,im 21 Years Old and I study
-                                Computer Science (Bachelor Degree) and i started
-                                learning Html,Css and Js when i had practical
-                                work (from faculty) to do in local companies and
-                                since then i started focusing more and more in
-                                Frontend Development.Recently I successfully
-                                graduated in Frontend course at Jagaad Academy.
-                                For the last 12Months, I had the chance to work
-                                on variety of technologies on a daily basis,
-                                especially in the last 6 months since i got
-                                accepted in Jagaad Academy where i had a great
-                                chance to practice a large number of modern
-                                technologies and also lately i started learning
-                                Node.js,MongoDB and Express.
-                            </p>
-                            <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
-                                {" "}
-                                My current skills (for now) : ⚪ HTML ⚪ CSS ⚪
-                                SASS ⚪ Tailwind ⚪ Bootstrap ⚪ Javascript ⚪
-                                TypeScript ⚪ React ⚪ Redux ⚪ Next.js ⚪
-                                Docker.
-                            </p>
+                            <Reveal keyframes={customAnimation}>
+                                <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
+                                    Hi, I'm Blend Emini,im 21 Years Old and I
+                                    study Computer Science (Bachelor Degree) and
+                                    i started learning Html,Css and Js when i
+                                    had practical work (from faculty) to do in
+                                    local companies and since then i started
+                                    focusing more and more in Frontend
+                                    Development.Recently I successfully
+                                    graduated in Frontend course at Jagaad
+                                    Academy. For the last 12Months, I had the
+                                    chance to work on variety of technologies on
+                                    a daily basis, especially in the last 6
+                                    months since i got accepted in Jagaad
+                                    Academy where i had a great chance to
+                                    practice a large number of modern
+                                    technologies and also lately i started
+                                    learning Node.js,MongoDB and Express.
+                                </p>
+                                <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
+                                    {" "}
+                                    My current skills (for now) : ⚪ HTML ⚪ CSS
+                                    ⚪ SASS ⚪ Tailwind ⚪ Bootstrap ⚪
+                                    Javascript ⚪ TypeScript ⚪ React ⚪ Redux
+                                    ⚪ Next.js ⚪ Docker.
+                                </p>
+                            </Reveal>
                         </div>
                     </section>
                     <section className="adding-border-white">
@@ -174,63 +193,72 @@ export default function Home() {
                         </div>
                         <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
                             <div className="basis-1/3 flex-1 gap-1 flex flex-col">
-                                <Image
-                                    src={web11}
-                                    className="rounded-lg object-cover"
-                                    width={"100%"}
-                                    height={"100%"}
-                                />
-                                <a
-                                    href="https://github.com/BlendEmini/nfters"
-                                    className="py-2 rounded-lg px-4 w-48 text-center text-white text-xl button-border "
-                                >
-                                    Project in Github
-                                </a>
-                            </div>
-                            <div className="basis-1/3 flex-1 gap-3 flex flex-col">
-                                <Image
-                                    src={web22}
-                                    className="rounded-lg object-cover"
-                                    width={"100%"}
-                                    height={"100%"}
-                                />
-                                <div className="flex gap-2">
+                                <Reveal keyframes={customAnimation}>
+                                    <Image
+                                        src={web11}
+                                        className="rounded-lg object-cover pb-3 "
+                                        width={"100%"}
+                                        height={"100%"}
+                                    />
                                     <a
-                                        href="https://github.com/BlendEmini/ecommerce-shop"
-                                        className="py-2 rounded-lg px-4 w-48 text-center text-white text-sm lg:text-xl button-border "
+                                        href="https://github.com/BlendEmini/nfters"
+                                        className="py-2 rounded-lg px-4 w-48 text-center text-white text-xl button-border "
                                     >
                                         Project in Github
                                     </a>
-                                    <a
-                                        href="https://ecommerce-fe6-final.netlify.app/"
-                                        className="py-2 rounded-lg px-4 w-48 text-center bg-gradient-to-r  from-cyan-500 to-teal-500  text-black text-xl button-border "
-                                    >
-                                        Live Project
-                                    </a>
-                                </div>
+                                </Reveal>
+                            </div>
+
+                            <div className="basis-1/3 flex-1 gap-3 flex flex-col">
+                                <Reveal keyframes={customAnimation}>
+                                    <Image
+                                        src={web22}
+                                        className="rounded-lg object-cover"
+                                        width={"100%"}
+                                        height={"100%"}
+                                    />
+                                    <div className="flex gap-2">
+                                        <a
+                                            href="https://github.com/BlendEmini/ecommerce-shop"
+                                            className="py-2 rounded-lg px-4 md:w-48 text-lg text-center text-white text-sm lg:text-xl button-border "
+                                        >
+                                            Project in Github
+                                        </a>
+                                        <a
+                                            href="https://ecommerce-fe6-final.netlify.app/"
+                                            className="py-2 rounded-lg px-4 md:w-48 text-center bg-gradient-to-r  from-cyan-500 to-teal-500  text-black text-xl button-border "
+                                        >
+                                            Live Project
+                                        </a>
+                                    </div>
+                                </Reveal>
                             </div>
                             <div className="basis-1/3 flex-1 flex flex-col gap-2">
-                                <Image
-                                    src={web33}
-                                    className="rounded-lg object-cover"
-                                    width={"100%"}
-                                    height={"100%"}
-                                />
-                                <a
-                                    href="https://github.com/BlendEmini/shapevoice-landingpage"
-                                    className="py-2 rounded-lg px-4 w-48 text-center text-white text-xl button-border "
-                                >
-                                    Project in Github
-                                </a>
+                                <Reveal keyframes={customAnimation}>
+                                    <Image
+                                        src={web33}
+                                        className="rounded-lg pb-3 object-cover"
+                                        width={"100%"}
+                                        height={"100%"}
+                                    />
+                                    <a
+                                        href="https://github.com/BlendEmini/shapevoice-landingpage"
+                                        className="py-2 rounded-lg px-4 w-48 text-center text-white text-xl button-border "
+                                    >
+                                        Project in Github
+                                    </a>
+                                </Reveal>
                             </div>
 
                             <div className="basis-1/3 flex-1">
-                                <Image
-                                    src={web5}
-                                    className="rounded-lg object-cover"
-                                    width={"100%"}
-                                    height={"100%"}
-                                />
+                                <Reveal keyframes={customAnimation}>
+                                    <Image
+                                        src={web5}
+                                        className="rounded-lg object-cover"
+                                        width={"100%"}
+                                        height={"100%"}
+                                    />
+                                </Reveal>
                             </div>
                         </div>
                     </section>
@@ -257,7 +285,7 @@ export default function Home() {
                                     type="text"
                                     name="user_lastname"
                                     placeholder="Last Name"
-                                    className="py-2 px-4 w-70  adding-border-black  rounded-xl"
+                                    className="py-2 px-4   md:w-70  adding-border-black  rounded-xl"
                                 ></input>
                                 <input
                                     type="email"
