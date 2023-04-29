@@ -85,13 +85,13 @@ export default function Home() {
                                 Blend Emini - Portfolio
                             </h1>
                             <ul className="flex items-center">
-                                <li>
+                                {/* <li>
                                     {" "}
                                     <BsFillMoonStarsFill
                                         onClick={() => setDarkMode(!darkMode)}
                                         className="cursor-pointer text-2xl dark:text-white"
                                     />{" "}
-                                </li>
+                                </li> */}
                                 <li>
                                     {" "}
                                     <a
@@ -170,6 +170,7 @@ export default function Home() {
                                     technologies and also lately i started
                                     learning Node.js,MongoDB and Express.
                                 </p>
+
                                 <p className="text-md py-2 leading-8 dark:text-white text-gray-800">
                                     {" "}
                                     My current skills (for now) : ⚪ HTML ⚪ CSS
@@ -258,6 +259,20 @@ export default function Home() {
                                         width={"100%"}
                                         height={"100%"}
                                     />
+                                    <div className="flex gap-4 mt-3">
+                                        <a
+                                            href="https://github.com/BlendEmini/CoalitionTech"
+                                            className="py-2 rounded-lg px-4 md:w-48 text-lg text-center text-white md:text-sm lg:text-xl button-border "
+                                        >
+                                            Project in Github
+                                        </a>
+                                        <a
+                                            href="https://coalition-skills-test-blendemini.netlify.app/"
+                                            className="py-2 rounded-lg px-2 md:w-48 text-center bg-gradient-to-r  from-cyan-500 to-teal-500  text-black text-xl button-border "
+                                        >
+                                            Live Project
+                                        </a>
+                                    </div>
                                 </Reveal>
                             </div>
                         </div>
@@ -299,7 +314,7 @@ export default function Home() {
                                     rows="5"
                                     cols="33"
                                     placeholder="Your Message"
-                                    className="py-2 px-4 w-70  adding-border-black  rounded-xl"
+                                    className="py-2 md:px-4 w-70  adding-border-black  rounded-xl"
                                 ></textarea>
                                 <input
                                     type="submit"
