@@ -16,7 +16,7 @@ import web22 from "../public/web22.png";
 import web33 from "../public/web33.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
-
+import certificate from "../public/certificate.png";
 import emailjs from "@emailjs/browser";
 import { useState, useRef } from "react";
 import { Fade } from "react-awesome-reveal";
@@ -179,6 +179,9 @@ export default function Home() {
                                     ⚪ Next.js ⚪ Docker.
                                 </p>
                             </Reveal>
+                        </div>
+                        <div className="flex justify-center">
+                            <Image className="w-96" src={certificate} />
                         </div>
                     </section>
                     <section className="adding-border-white">
