@@ -230,7 +230,7 @@ export default function Home() {
                                         </a>
                                         <a
                                             href="https://ecommerce-fe6-final.netlify.app/"
-                                            className="py-2 rounded-lg px-4 md:w-48 text-center bg-gradient-to-r  from-cyan-500 to-teal-500  text-black text-xl button-border "
+                                            className="py-2 rounded-lg px-2 md:w-48 text-center bg-gradient-to-r  from-cyan-500 to-teal-500  text-black text-xl button-border "
                                         >
                                             Live Project
                                         </a>
