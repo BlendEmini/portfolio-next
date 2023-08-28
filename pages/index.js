@@ -78,7 +78,18 @@ export default function Home() {
                         content="width=device-width, initial-scale=1"
                     />
                 </Head>
-                <main className="bg-white px-10 md:px20 lg:px-40 dark:bg-gray-900">
+                <main className="bg-white px-10 md:px20 lg:px-40 dark:bg-gray-900 ">
+                    <div className="flex justify-center pt-6 border-warning lg:ml-96 w-44 lg:w-96 p-4 bg-orange-300 text-center">
+                        <h2 className="uppercase">
+                            &#9888; Kindly be informed that the information
+                            contained within my CV and portfolio website has not
+                            been updated for a period of six months. Please do
+                            not hesitate to reach out to me for further
+                            information. Unfortunately, due to time constraints,
+                            I have been unable to update my CV and portfolio.
+                            Thank you for your understanding.{" "}
+                        </h2>
+                    </div>
                     <section className="min-h-screen">
                         <nav className="py-10 mb-12 flex justify-between">
                             <h1 className="text-4xl font-header dark:text-white ">

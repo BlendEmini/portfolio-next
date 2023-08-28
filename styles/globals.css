@@ -58,3 +58,7 @@
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
 }
+.border-warning {
+    border: 1px solid white;
+    border-radius: 20px;
+}
