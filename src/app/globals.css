@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-pacifico {
+    font-family: "Pacifico";
+}
+.font-poppins {
+    font-family: "Poppins";
+}
+.services-bg {
+    background-color: #131313;
+}
+.services-box-bg {
+    background-color: #262626;
+}
+.hero-bg {
+    background-image: url("./assets/bgs2_11zon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 402px) {
+    .btn {
+        height: 50px;
+    }
+}
