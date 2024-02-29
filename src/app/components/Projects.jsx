@@ -42,7 +42,7 @@ const Projects = () => {
     ];
 
     return (
-        <div className="services-bg w-screen flex items-center gap-5 lg:pt-[75px] justify-center flex-col">
+        <div className="services-bg pb-10 w-screen flex items-center gap-5 lg:pt-[75px] justify-center flex-col">
             <div className="justify-center flex flex-col  items-center">
                 <h5 className="text-gray-400 text-lg">PORTFOLIO</h5>
                 <h4 className="text-white text-2xl">
