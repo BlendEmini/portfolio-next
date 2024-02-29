@@ -4,7 +4,7 @@ import avatar from "../assets/avatar.png";
 
 const AboutMe = () => {
     return (
-        <div className="about-me w-screen  box-border p-5 flex flex-col gap-6 justify-center items-center">
+        <div className="about-me  w-screen  box-border p-5 flex flex-col gap-6 justify-center items-center">
             <div className="flex flex-col justify-center items-center">
                 <p className="text-gray-400 text-lg">MY BIO</p>
                 <h5 className="text-white text-2xl">
@@ -111,7 +111,7 @@ const AboutMe = () => {
                     <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
                         MONGO DB
                     </h4>
-                    <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+                    <h4 className="box-border rounded-bl-2xl p-5 text-white about-skills border border-teal-400">
                         SQL
                     </h4>
                 </div>
