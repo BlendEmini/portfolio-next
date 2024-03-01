@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
-import splash1 from "../assets/splash.png";
+import emailjs from "emailjs-com";
 import Calendly from "./Calendly";
 
 const Contact = () => {
@@ -45,14 +44,38 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission here
+        if (isFormValid()) {
+            // Send email using EmailJS
+            emailjs
+                .send(
+                    "service_trrb7en",
+                    "template_es2q4vi",
+                    {
+                        from_name: e.target.user_name.value,
+                        from_email: e.target.user_email.value,
+                        message: e.target.message.value,
+                    },
+                    "FgZw1iF1rmSp0Y5FY"
+                )
+                .then((response) => {
+                    console.log("Email sent successfully:", response);
+                    // Optionally, you can reset the form fields here
+                    setName("");
+                    setEmail("");
+                    setMessage("");
+                })
+                .catch((error) => {
+                    console.error("Email send failed:", error);
+                });
+        }
     };
 
-    const isFormValid =
-        name.length >= 3 && emailError === "" && message.length >= 12;
+    const isFormValid = () => {
+        return name.length >= 3 && emailError === "" && message.length >= 12;
+    };
 
     return (
-        <div className="flex gap-10 box-border p-5 flex-col  items-center splash services-bg w-screen relative">
+        <div className="flex gap-10 box-border p-5 flex-col items-center splash services-bg w-screen relative">
             <div className="flex flex-col justify-center items-center">
                 <p className="text-gray-400 text-sm">GET IN TOUCH</p>
                 <h4 className="text-white text-3xl">
@@ -69,6 +92,7 @@ const Contact = () => {
                     <h5 className="text-teal-400 text-xl font-semibold">
                         Click the button down below to
                     </h5>
+                    {/* Assuming Calendly is a component */}
                     <Calendly />
                 </div>
 
@@ -90,6 +114,7 @@ const Contact = () => {
                             <input
                                 placeholder="Enter Name"
                                 type="text"
+                                name="user_name"
                                 className="bg-transparent border text-white border-gray-400 rounded-xl w-[300px] md:w-[500px] box-border p-2 "
                                 value={name}
                                 onChange={handleNameChange}
@@ -103,6 +128,7 @@ const Contact = () => {
                             <input
                                 placeholder="Enter Email"
                                 type="email"
+                                name="user_email"
                                 className="bg-transparent text-white border border-gray-400 rounded-xl w-[300px] md:w-[500px] box-border p-2  "
                                 value={email}
                                 onChange={handleEmailChange}
@@ -115,6 +141,7 @@ const Contact = () => {
                             <h6 className="text-white">Message</h6>
                             <textarea
                                 placeholder="Enter Message"
+                                name="message"
                                 className="bg-transparent text-white border w-[300px] md:w-[500px] border-gray-400 rounded-xl box-border p-2 "
                                 value={message}
                                 onChange={handleMessageChange}
@@ -128,7 +155,7 @@ const Contact = () => {
 
                         <button
                             className="bg-teal-400 cursor-pointer text-slate-800 box-border p-3 w-[150px]"
-                            disabled={!isFormValid}
+                            disabled={!isFormValid()}
                         >
                             Send Message
                         </button>
