@@ -47,7 +47,12 @@ const AboutMe = () => {
                         solutions.
                     </h5>
                     <div className="text-black max-w-[170px] bg-teal-400 box-border p-3 flex items-center gap-3">
-                        <button className="font-medium">View Resume</button>
+                        <a
+                            href="https://drive.google.com/file/d/11xxHM7_0f_KcOpP4ZI5_6J7e6H02TPaM/view?usp=drive_link"
+                            className="font-medium"
+                        >
+                            View Resume
+                        </a>
                         <svg
                             className="w-4 h-4"
                             xmlns="http://www.w3.org/2000/svg"

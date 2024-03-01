@@ -7,7 +7,9 @@ const Navbar = () => {
                 Blend Emini - Portfolio
             </h3>
             <div className="flex btn items-center mr-2 text-black bg-teal-400  rounded-md gap-1 h-12 box-border px-2 md:px-4 p-1 ">
-                <button>View Resume </button>
+                <a href="https://drive.google.com/file/d/11xxHM7_0f_KcOpP4ZI5_6J7e6H02TPaM/view?usp=drive_link">
+                    View Resume{" "}
+                </a>
                 <svg
                     className="w-4 h-4"
                     xmlns="http://www.w3.org/2000/svg"
