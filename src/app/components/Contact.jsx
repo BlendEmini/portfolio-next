@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import splash1 from "../assets/splash.png";
 import Calendly from "./Calendly";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -12,7 +11,6 @@ const Contact = () => {
     const [nameError, setNameError] = useState("");
     const [emailError, setEmailError] = useState("");
     const [messageError, setMessageError] = useState("");
-    const [recaptchaValue, setRecaptchaValue] = useState(null);
 
     const handleNameChange = (e) => {
         const value = e.target.value;
@@ -45,17 +43,8 @@ const Contact = () => {
         }
     };
 
-    const handleRecaptchaChange = (value) => {
-        setRecaptchaValue(value);
-    };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!recaptchaValue) {
-            // Handle reCAPTCHA not completed error
-            alert("Please complete the reCAPTCHA");
-            return;
-        }
         // Handle form submission here
     };
 
@@ -136,10 +125,7 @@ const Contact = () => {
                                 </div>
                             )}
                         </div>
-                        <ReCAPTCHA
-                            sitekey={process.env.PUBLIC_NEXT_RECAPTCHA_SITE_KEY}
-                            onChange={handleRecaptchaChange}
-                        />
+
                         <button
                             className="bg-teal-400 cursor-pointer text-slate-800 box-border p-3 w-[150px]"
                             disabled={!isFormValid}
