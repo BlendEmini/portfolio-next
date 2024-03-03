@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import Navbar from "./Navbar";
 
-const Hero = () => {
+const Hero = ({ scrollToBottom }) => {
     return (
         <div className="hero-bg">
             <Navbar />
@@ -17,12 +18,20 @@ const Hero = () => {
                     ideas to life.
                 </h3>
                 <div className="flex gap-3 pt-5 flex-wrap">
-                    <FaGithub className="fill-white text-5xl" />
-                    <FaLinkedin className="fill-white text-5xl" />
+                    <a href="https://github.com/blendEmini">
+                        <FaGithub className="fill-white text-5xl" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/blend-emini-0b175125b/">
+                        <FaLinkedin className="fill-white text-5xl" />
+                    </a>
+                    <a href="https://twitter.com/blendeminii">
+                        <FaTwitter className="fill-white text-5xl" />
+                    </a>
 
-                    <FaTwitter className="fill-white text-5xl" />
-
-                    <FaEnvelope className="fill-white text-5xl" />
+                    <FaEnvelope
+                        className="fill-white text-5xl"
+                        onClick={scrollToBottom}
+                    />
                 </div>
             </div>
         </div>

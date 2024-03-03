@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import Calendly from "./Calendly";
 
-const Contact = () => {
+const Contact = ({ bottomRef }) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
@@ -96,7 +96,7 @@ const Contact = () => {
                     <Calendly />
                 </div>
 
-                <div className="flex flex-col gap-7">
+                <div className="flex flex-col gap-7" ref={bottomRef}>
                     <div>
                         <h5 className="text-white text-2xl">
                             Have an awesome project idea?

@@ -63,7 +63,11 @@ const Projects = () => {
                     <div key={index}>
                         <div className="border-2 services-box-bg border-teal-400 rounded-md">
                             <div>
-                                <Image className="max-w-96" src={box.image} />
+                                <Image
+                                    alt="img"
+                                    className="max-w-96"
+                                    src={box.image}
+                                />
                             </div>
                         </div>
                         <div className=" box-border items-center flex justify-between px-5 py-2">

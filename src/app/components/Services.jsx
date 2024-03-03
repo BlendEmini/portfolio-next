@@ -36,7 +36,7 @@ const Services = () => {
                     </p>
                 </div>
                 <div className="w-80 h-72 flex flex-col gap-4 services-box-bg border border-teal-400 box-border p-5">
-                    <Image width={52} src={seo} />
+                    <Image alt="img" width={52} src={seo} />
                     <h4 className="text-white font-bold text-2xl">SEO</h4>
                     <p className="text-white  font-medium">
                         I offer website optimization, enhancing performance,

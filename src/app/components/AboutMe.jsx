@@ -14,6 +14,7 @@ const AboutMe = () => {
             <div className="flex items-center box-border p-5 justify-center gap-10 lg:gap-20 flex-wrap ">
                 <div className="w-auto lg:max-w-[500px] lg:max-h-[500px] border border-teal-200 bg-teal-700  rounded-full">
                     <Image
+                        alt="img"
                         className="w-auto h-auto lg:max-w-[500px] lg:max-h-[500px] rounded-full"
                         src={avatar}
                     />
