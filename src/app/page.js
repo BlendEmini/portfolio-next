@@ -6,21 +6,28 @@ import Services from "./components/Services";
 import Projects from "./components/Projects";
 import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Resume from "./components/Resume";
 
 export default function Home() {
-    const bottomRef = useRef(null);
+  const [showResume, setShowResume] = useState(false);
+  const bottomRef = useRef(null);
 
-    const scrollToBottom = () => {
-        bottomRef.current.scrollIntoView({ behavior: "smooth" });
-    };
-    return (
-        <div className="">
-            <Hero scrollToBottom={scrollToBottom} />
-            <Services />
-            <Projects />
-            <AboutMe />
-            <Contact bottomRef={bottomRef} />
-        </div>
-    );
+  const scrollToBottom = () => {
+    bottomRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  return (
+    <div>
+      <Resume showResume={showResume} setShowResume={setShowResume} />
+      <Hero
+        setShowResume={setShowResume}
+        showResume={showResume}
+        scrollToBottom={scrollToBottom}
+      />
+      <Services />
+      <Projects />
+      <AboutMe />
+      <Contact bottomRef={bottomRef} />
+    </div>
+  );
 }
