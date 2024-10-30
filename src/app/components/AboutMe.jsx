@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import avatar from "../assets/avatar.png";
 
-const AboutMe = () => {
+const AboutMe = ({ showResume, setShowResume }) => {
   return (
     <div className="about-me  w-screen  box-border p-5 flex flex-col gap-6 justify-center items-center">
       <div className="flex flex-col justify-center items-center">
@@ -42,13 +42,14 @@ const AboutMe = () => {
             contribute meaningfully to the ever-evolving landscape of
             technology, driving progress and creating impactful solutions.
           </h5>
-          <div className="text-black max-w-[170px] bg-teal-400 box-border p-3 flex items-center gap-3">
-            <a
-              href="https://drive.google.com/file/d/11xxHM7_0f_KcOpP4ZI5_6J7e6H02TPaM/view?usp=drive_link"
-              className="font-medium"
-            >
-              View Resume
-            </a>
+          <button
+            onClick={() => {
+              setShowResume(true);
+              window.scrollTo({ top: 0, behavior: "smooth" }); // Scrolls smoothly to the top
+            }}
+            className="text-black max-w-[170px] bg-teal-400 box-border p-3 flex items-center gap-3"
+          >
+            <span className="font-medium">View Resume</span>
             <svg
               className="w-4 h-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +60,7 @@ const AboutMe = () => {
                 data-name="Brief Case"
               />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
       <div className="flex gap-9 flex-wrap box-border p-5">

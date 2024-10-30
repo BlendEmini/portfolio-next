@@ -26,7 +26,7 @@ export default function Home() {
       />
       <Services />
       <Projects />
-      <AboutMe />
+      <AboutMe showResume={showResume} setShowResume={setShowResume} />
       <Contact bottomRef={bottomRef} />
     </div>
   );
