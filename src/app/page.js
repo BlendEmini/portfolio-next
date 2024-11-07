@@ -17,7 +17,7 @@ export default function Home() {
     bottomRef.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div>
+    <div className="overflow-x-hidden ">
       <Resume showResume={showResume} setShowResume={setShowResume} />
       <Hero
         setShowResume={setShowResume}
