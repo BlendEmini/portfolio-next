@@ -21,26 +21,29 @@ const AboutMe = ({ showResume, setShowResume }) => {
         </div>
         <div className="w-[320px] lg:w-[440px] text-white flex flex-col gap-5 ">
           <h5>
-            As an undergraduate in Computer Science, I've delved deep into the
-            realms of technology, honing my skills across multiple domains. With
-            certifications validating my proficiency, I've navigated through
-            frontend and backend development, mastering languages like HTML,
-            CSS,Javascript,React,Next.js,TailwindCss Java, and Node.js.
+            As a Computer Science undergraduate, I have explored various facets
+            of technology, refining my expertise in both frontend and backend
+            development. My journey is backed by certifications that validate my
+            skills, and I have gained proficiency in key technologies such as
+            HTML, CSS, JavaScript, TypeScript, React, Next.js, Vue.js, Tailwind
+            CSS, Java, and Node.js.
           </h5>
           <h5>
-            My journey in the tech industry has been a blend of learning and
-            application. Through hands-on experiences, I've cultivated a robust
-            understanding of software development, leveraging frameworks like
-            Spring Boot and Express to build scalable solutions. This practical
-            expertise has been further enriched by theoretical knowledge gained
-            in academia.
+            My experience in the tech industry has been a dynamic blend of
+            learning and hands-on application. By working on real-world
+            projects, I have built a strong foundation in software development,
+            utilizing frameworks like Spring Boot and Express to develop
+            scalable and efficient solutions. This practical knowledge is
+            complemented by a deep theoretical understanding acquired through my
+            academic studies.
           </h5>
           <h5>
-            Adding to my credentials is a commendable reference letter from a
-            prominent company, attesting to my dedication and competence. With a
-            commitment to continuous growth and innovation, I aspire to
-            contribute meaningfully to the ever-evolving landscape of
-            technology, driving progress and creating impactful solutions.
+            Further strengthening my credentials is a notable reference letter
+            from a respected company, recognizing my dedication and technical
+            acumen. With an unwavering commitment to continuous learning and
+            innovation, I strive to contribute meaningfully to the ever-evolving
+            world of technology—building impactful solutions and driving
+            progress.
           </h5>
           <button
             onClick={() => {
@@ -63,27 +66,30 @@ const AboutMe = ({ showResume, setShowResume }) => {
           </button>
         </div>
       </div>
-      <div className="flex gap-9 flex-wrap box-border p-5">
-        <div className="flex flex-col gap-4 max-w-[500px]">
-          <h5 className="text-white text-2xl">
+      <div className="flex items-center gap-9 flex-wrap box-border p-5">
+        <div className="flex flex-col gap-4 max-w-[400px]">
+          <h5 className="text-white text-3xl">
             Technical <span className="text-teal-400">skills</span>{" "}
           </h5>
           <p className="text-white">
-            My technical prowess spans a spectrum of languages and frameworks,
-            from frontend staples like HTML, CSS,JavaScript,React,Next.js and
-            TailwindCss to robust backend technologies including Java, Spring
-            Boot, Node.js, and Express. With a solid foundation in Computer
-            Science and hands-on experience in software development, I am adept
-            at crafting efficient and scalable solutions tailored to meet
-            diverse user needs.
+            My technical expertise spans a diverse range of languages and
+            frameworks, from frontend technologies like HTML, CSS, JavaScript,
+            TypeScript, React, Next.js, Vue.js, and Tailwind CSS to robust
+            backend technologies including Java, Spring Boot, Node.js, and
+            Express. With a solid foundation in Computer Science and hands-on
+            experience in software development, I excel at designing efficient,
+            scalable solutions tailored to meet diverse user needs.
           </p>
         </div>
-        <div className="flex gap-3 flex-wrap max-w-[400px]">
+        <div className="flex gap-3 flex-wrap max-w-[500px]">
           <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
             HTML5
           </h4>
           <h4 className="box-border rounded-md p-5 text-white about-skills border border-teal-400">
             JAVASCRIPT
+          </h4>
+          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+            TYPESCRIPT
           </h4>
           <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
             CSS3
@@ -96,6 +102,9 @@ const AboutMe = ({ showResume, setShowResume }) => {
           </h4>
           <h4 className="box-border rounded-2xl p-5 text-white about-skills border border-teal-400">
             VUE.js
+          </h4>
+          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+            NEXT.JS
           </h4>
           <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
             NODE.JS
@@ -114,6 +123,30 @@ const AboutMe = ({ showResume, setShowResume }) => {
           </h4>
           <h4 className="box-border rounded-bl-2xl p-5 text-white about-skills border border-teal-400">
             SQL
+          </h4>
+          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+            GRAPHQL
+          </h4>
+          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+            REST API
+          </h4>
+          <h4 className="box-border rounded-b-lg p-5 text-white about-skills border border-teal-400">
+            CYPRESS
+          </h4>
+          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+            JEST
+          </h4>
+          <h4 className="box-border rounded-r-lg p-5 text-white about-skills border border-teal-400">
+            POSTMAN
+          </h4>
+          <h4 className="box-border rounded-l-xl rounded-tr-xl p-5 text-white about-skills border border-teal-400">
+            DOCKER
+          </h4>
+          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+            GIT & GITHUB
+          </h4>
+          <h4 className="box-border rounded-l-2xl p-5 text-white about-skills border border-teal-400">
+            JIRA
           </h4>
         </div>
       </div>
