@@ -22,17 +22,14 @@ const Hero = ({ scrollToBottom, showResume, setShowResume }) => {
           </h3>
           <div className="flex gap-3 pt-5 flex-wrap">
             <a href="https://github.com/blendEmini">
-              <FaGithub className="fill-white text-5xl" />
+              <FaGithub className="fill-white text-5xl transition-transform transform hover:scale-110 hover:text-teal-400 hover:shadow-lg" />
             </a>
-            <a href="https://www.linkedin.com/in/blend-emini-0b175125b/">
-              <FaLinkedin className="fill-white text-5xl" />
-            </a>
-            <a href="https://twitter.com/blendeminii">
-              <FaTwitter className="fill-white text-5xl" />
+            <a href="https://www.linkedin.com/in/blendemini">
+              <FaLinkedin className="fill-white text-5xl transition-transform transform hover:scale-110 hover:text-teal-400 hover:shadow-lg" />
             </a>
 
             <FaEnvelope
-              className="fill-white text-5xl"
+              className="fill-white text-5xl transition-transform transform hover:scale-110 hover:text-teal-400 hover:shadow-lg cursor-pointer"
               onClick={scrollToBottom}
             />
           </div>

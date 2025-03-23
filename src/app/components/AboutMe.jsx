@@ -67,7 +67,7 @@ const AboutMe = ({ showResume, setShowResume }) => {
         </div>
       </div>
       <div className="flex items-center gap-9 flex-wrap box-border p-5">
-        <div className="flex flex-col gap-4 max-w-[400px]">
+        <div className="flex flex-col gap-4 max-w-[500px]">
           <h5 className="text-white text-3xl">
             Technical <span className="text-teal-400">skills</span>{" "}
           </h5>
@@ -82,70 +82,70 @@ const AboutMe = ({ showResume, setShowResume }) => {
           </p>
         </div>
         <div className="flex gap-3 flex-wrap max-w-[500px]">
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             HTML5
           </h4>
-          <h4 className="box-border rounded-md p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-md p-3 text-white about-skills border border-teal-400 text-sm ">
             JAVASCRIPT
           </h4>
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             TYPESCRIPT
           </h4>
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             CSS3
           </h4>
-          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-lg p-3 text-white about-skills border border-teal-400 text-sm ">
             TAILWINDCSS
           </h4>
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             REACT
           </h4>
-          <h4 className="box-border rounded-2xl p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-2xl p-3 text-white about-skills border border-teal-400 text-sm ">
             VUE.js
           </h4>
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             NEXT.JS
           </h4>
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             NODE.JS
           </h4>
-          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-lg p-3 text-white about-skills border border-teal-400 text-sm ">
             EXPRESS.JS
           </h4>
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             JAVA
           </h4>
-          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-lg p-3 text-white about-skills border border-teal-400 text-sm ">
             SPRING BOOT
           </h4>
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             MONGO DB
           </h4>
-          <h4 className="box-border rounded-bl-2xl p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-bl-2xl p-3 text-white about-skills border border-teal-400 text-sm ">
             SQL
           </h4>
-          <h4 className="box-border rounded-full p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-full p-3 text-white about-skills border border-teal-400 text-sm ">
             GRAPHQL
           </h4>
-          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-lg p-3 text-white about-skills border border-teal-400 text-sm ">
             REST API
           </h4>
-          <h4 className="box-border rounded-b-lg p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-b-lg p-3 text-white about-skills border border-teal-400 text-sm ">
             CYPRESS
           </h4>
-          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-lg p-3 text-white about-skills border border-teal-400 text-sm ">
             JEST
           </h4>
-          <h4 className="box-border rounded-r-lg p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-r-lg p-3 text-white about-skills border border-teal-400 text-sm ">
             POSTMAN
           </h4>
-          <h4 className="box-border rounded-l-xl rounded-tr-xl p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-l-xl rounded-tr-xl p-3 text-white about-skills border border-teal-400 text-sm ">
             DOCKER
           </h4>
-          <h4 className="box-border rounded-lg p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-lg p-3 text-white about-skills border border-teal-400 text-sm ">
             GIT & GITHUB
           </h4>
-          <h4 className="box-border rounded-l-2xl p-5 text-white about-skills border border-teal-400">
+          <h4 className="box-border rounded-l-2xl p-3 text-white about-skills border border-teal-400 text-sm ">
             JIRA
           </h4>
         </div>
