@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import avatar from "../assets/avatar.png";
+import avatar from "../assets/avatar3.png";
 
 const AboutMe = ({ showResume, setShowResume }) => {
   return (
@@ -15,7 +15,7 @@ const AboutMe = ({ showResume, setShowResume }) => {
         <div className="w-auto lg:max-w-[500px] lg:max-h-[500px] border border-teal-200 bg-teal-700  rounded-full">
           <Image
             alt="img"
-            className="w-auto h-auto lg:max-w-[500px] lg:max-h-[500px] rounded-full"
+            className="w-auto h-auto lg:max-w-[450px] lg:max-h-[450px] rounded-full"
             src={avatar}
           />
         </div>

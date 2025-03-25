@@ -8,6 +8,7 @@ import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
 import { useRef, useState } from "react";
 import Resume from "./components/Resume";
+import Education from "./components/Education";
 
 export default function Home() {
   const [showResume, setShowResume] = useState(false);
@@ -24,6 +25,7 @@ export default function Home() {
         showResume={showResume}
         scrollToBottom={scrollToBottom}
       />
+      <Education />
       <Services />
       <Projects />
       <AboutMe showResume={showResume} setShowResume={setShowResume} />
