@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import jagaadAcademy from "../assets/jagaadAcademy.jpeg";
 import { motion } from "framer-motion";
 
 const Education = () => {
@@ -39,8 +38,8 @@ const Education = () => {
       ],
     },
     {
-      id: 1,
-      title: "Frontend Academy",
+      id: 2,
+      title: "Academy",
       items: [
         {
           institution: "Jagaad Academy",
@@ -53,14 +52,7 @@ const Education = () => {
             "Learned state management and component architecture",
             "Completed multiple real-world projects",
           ],
-          image: jagaadAcademy,
         },
-      ],
-    },
-    {
-      id: 2,
-      title: "Java Training",
-      items: [
         {
           institution: "Java Advanced Course",
           period: "2023-2024",
@@ -73,6 +65,13 @@ const Education = () => {
             "Completed practical programming assignments",
           ],
         },
+      ],
+    },
+
+    {
+      id: 3,
+      title: "Online Courses",
+      items: [
         {
           institution: "Online Spring Boot Course",
           period: "2024",
@@ -85,12 +84,6 @@ const Education = () => {
             "Connected applications to databases",
           ],
         },
-      ],
-    },
-    {
-      id: 3,
-      title: "Online Courses",
-      items: [
         {
           institution: "Udemy",
           period: "2022",
@@ -142,9 +135,9 @@ const Education = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(index)}
-                className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
+                className={`px-4 mt-2 py-2 rounded-full text-sm whitespace-nowrap transition-colors ${
                   activeTab === index
-                    ? "bg-teal-600 text-white"
+                    ? "bg-teal-600 text-white border"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                 }`}
               >
@@ -169,17 +162,6 @@ const Education = () => {
               <div className="absolute left-4 w-3 h-3 rounded-full bg-teal-400 top-1 -translate-x-1/2" />
 
               <div className={`pl-12 ${item.image ? "md:flex gap-8" : ""}`}>
-                {item.image && (
-                  <div className="md:w-1/3 mb-6 md:mb-0">
-                    <Image
-                      src={item.image}
-                      alt={item.institution}
-                      className="rounded-lg object-cover h-full max-h-64 w-full"
-                      placeholder="blur"
-                    />
-                  </div>
-                )}
-
                 <div className={`${item.image ? "md:w-2/3" : ""}`}>
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h3 className="text-xl font-bold text-teal-300">
