@@ -3,173 +3,217 @@ import React, { useState } from "react";
 import axios from "axios";
 import Calendly from "./Calendly";
 import Toast from "./Toast";
-import { FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaPaperPlane } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Contact = ({ bottomRef }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [messageError, setMessageError] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [toast, setToast] = useState({
+    show: false,
+    message: "",
+    type: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Toast state
-  const [toastMessage, setToastMessage] = useState("");
-  const [toastType, setToastType] = useState(""); // success or error
-  const [showToast, setShowToast] = useState(false);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
-  const handleNameChange = (e) => {
-    const value = e.target.value;
-    setName(value);
-    if (value.length < 3) {
-      setNameError("Name must be at least 3 characters long");
-    } else {
-      setNameError("");
-    }
-  };
-
-  const handleEmailChange = (e) => {
-    const value = e.target.value;
-    setEmail(value);
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(value)) {
-      setEmailError("Please enter a valid email address");
-    } else {
-      setEmailError("");
-    }
-  };
-
-  const handleMessageChange = (e) => {
-    const value = e.target.value;
-    setMessage(value);
-    if (value.length < 12) {
-      setMessageError("Message must be at least 12 characters long");
-    } else {
-      setMessageError("");
+    // Validate on change
+    if (name === "name") {
+      setErrors((prev) => ({
+        ...prev,
+        name: value.length < 3 ? "Name must be at least 3 characters" : "",
+      }));
+    } else if (name === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      setErrors((prev) => ({
+        ...prev,
+        email: !emailRegex.test(value) ? "Please enter a valid email" : "",
+      }));
+    } else if (name === "message") {
+      setErrors((prev) => ({
+        ...prev,
+        message:
+          value.length < 12 ? "Message must be at least 12 characters" : "",
+      }));
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isFormValid()) {
-      // Send email using custom API (e.g., /api/contact)
-      try {
-        const response = await axios.post("/api/contact", {
-          name,
-          email,
-          message,
-        });
-        console.log("Message sent successfully:", response.data);
-        setToastMessage("Your message has been sent successfully!");
-        setToastType("success");
-        setShowToast(true);
-        // Optionally, reset the form fields
-        setName("");
-        setEmail("");
-        setMessage("");
-      } catch (error) {
-        console.error("Failed to send message:", error);
-        setToastMessage("Failed to send the message. Please try again.");
-        setToastType("error");
-        setShowToast(true);
-      }
+    setIsSubmitting(true);
+
+    try {
+      await axios.post("/api/contact", formData);
+      setToast({
+        show: true,
+        message: "Message sent successfully!",
+        type: "success",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      setToast({
+        show: true,
+        message: "Failed to send message. Please try again.",
+        type: "error",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const isFormValid = () => {
-    return name.length >= 3 && emailError === "" && message.length >= 12;
+    return (
+      formData.name.length >= 3 &&
+      !errors.email &&
+      formData.message.length >= 12
+    );
   };
 
   const closeToast = () => {
-    setShowToast(false);
-    setToastMessage("");
-    setToastType("");
+    setToast((prev) => ({ ...prev, show: false }));
   };
 
   return (
-    <div className="flex gap-10 box-border p-5 flex-col items-center splash services-bg w-screen relative">
-      <div className="flex flex-col justify-center items-center">
-        <p className="text-gray-400 text-sm">GET IN TOUCH</p>
-        <h4 className="text-white text-3xl">
-          Contact <span className="text-teal-400">Me</span>
-        </h4>
-        <h5 className="w-[300px] md:w-[500px] text-xl lg:w-[900px] text-white text-center">
-          I’m open to part-time freelance opportunities in Frontend Development,
-          Backend Development, Quality Assurance, and Email Development. Feel
-          free to reach out!
-        </h5>
+    <div className="splash services-bg w-full py-20 px-4 md:px-8 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          {/* <p className="text-teal-400 text-3xl font-mono mb-2">CONTACT</p> */}
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Let's <span className="text-teal-400">Connect</span>
+          </h2>
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+            Open for freelance opportunities in Fullstack Development, QA
+            Automation, and Email Development. Let's bring your ideas to life!
+          </p>
+        </motion.div>
+
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Calendly Section */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
+          >
+            <div className="flex flex-col items-center text-center gap-6">
+              <FaCalendarAlt className="text-teal-400 text-5xl" />
+              <h3 className="text-2xl font-bold text-white">
+                Schedule a Meeting
+              </h3>
+              <p className="text-gray-300">
+                Book a time directly on my calendar for a consultation
+              </p>
+              <div className="mt-4">
+                <Calendly />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800"
+            ref={bottomRef}
+          >
+            <h3 className="text-2xl font-bold text-white mb-2">
+              Send Me a Message
+            </h3>
+            <p className="text-gray-400 mb-6">
+              Have a project in mind? Let's discuss how I can help.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label className="block text-gray-300 mb-2">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-400 focus:outline-none"
+                  placeholder="Your name"
+                />
+                {errors.name && (
+                  <p className="text-red-400 text-sm mt-1">{errors.name}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-gray-300 mb-2">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-400 focus:outline-none"
+                  placeholder="your.email@example.com"
+                />
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-gray-300 mb-2">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="5"
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-teal-400 focus:outline-none"
+                  placeholder="Tell me about your project..."
+                ></textarea>
+                {errors.message && (
+                  <p className="text-red-400 text-sm mt-1">{errors.message}</p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={!isFormValid() || isSubmitting}
+                className={`flex items-center justify-center gap-2 w-full py-3 px-6 rounded-lg font-medium transition-colors ${
+                  isFormValid()
+                    ? "bg-teal-500 hover:bg-teal-600 text-white"
+                    : "bg-gray-700 text-gray-400 cursor-not-allowed"
+                }`}
+              >
+                {isSubmitting ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    <FaPaperPlane /> Send Message
+                  </>
+                )}
+              </button>
+            </form>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Toast notification */}
-      {showToast && (
-        <Toast message={toastMessage} type={toastType} onClose={closeToast} />
+      {/* Toast Notification */}
+      {toast.show && (
+        <Toast message={toast.message} type={toast.type} onClose={closeToast} />
       )}
-
-      <div className="about-skills justify-center items-center flex flex-wrap gap-20 box-border p-4 md:p-5 lg:p-12 rounded-xl">
-        <div className="flex flex-col justify-center items-center gap-5">
-          <FaCalendarAlt className="text-teal-400 text-5xl" />
-          <h5 className="text-teal-400 text-xl font-semibold">
-            Ready to get started? Click the button below to
-          </h5>
-          {/* Assuming Calendly is a component */}
-          <Calendly />
-        </div>
-
-        <div className="flex flex-col gap-7" ref={bottomRef}>
-          <div>
-            <h5 className="text-white text-2xl">
-              Have an awesome project idea?
-            </h5>
-            <h5 className="text-teal-400 text-3xl">Let's Discuss.</h5>
-          </div>
-          <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
-            <div>
-              <h6 className="text-white">Full Name</h6>
-              <input
-                placeholder="Enter Name"
-                type="text"
-                name="user_name"
-                className="bg-transparent border text-white border-gray-400 rounded-xl w-[300px] md:w-[500px] box-border p-2 "
-                value={name}
-                onChange={handleNameChange}
-              />
-              {nameError && <div className="text-red-500">{nameError}</div>}
-            </div>
-            <div>
-              <h6 className="text-white">Email Address</h6>
-              <input
-                placeholder="Enter Email"
-                type="email"
-                name="user_email"
-                className="bg-transparent text-white border border-gray-400 rounded-xl w-[300px] md:w-[500px] box-border p-2  "
-                value={email}
-                onChange={handleEmailChange}
-              />
-              {emailError && <div className="text-red-500">{emailError}</div>}
-            </div>
-            <div className="">
-              <h6 className="text-white">Message</h6>
-              <textarea
-                placeholder="Enter Message"
-                name="message"
-                className="bg-transparent text-white border w-[300px] md:w-[500px] border-gray-400 rounded-xl box-border p-2 "
-                value={message}
-                onChange={handleMessageChange}
-              />
-              {messageError && (
-                <div className="text-red-500">{messageError}</div>
-              )}
-            </div>
-
-            <button
-              className="bg-teal-400 cursor-pointer text-slate-800 box-border p-3 w-[150px]"
-              disabled={!isFormValid()}
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
     </div>
   );
 };
