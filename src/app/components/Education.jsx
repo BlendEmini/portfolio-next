@@ -241,7 +241,7 @@ const Education = () => {
                 <Image
                   src={educationData[1].items[0].image}
                   alt={educationData[1].items[0].institution}
-                  className="object-cover max-w-[400px] rounded-lg"
+                  className="object-cover  md:max-w-[400px] rounded-lg"
                   placeholder="blur"
                 />
               </motion.div>
