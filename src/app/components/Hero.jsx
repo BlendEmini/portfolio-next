@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 
-const Hero = ({ scrollToBottom }) => {
+const Hero = ({ scrollToBottom, showResume, setShowResume }) => {
   const [displayText, setDisplayText] = useState("");
   const phrases = [
     "Full Stack Developer",
@@ -31,7 +31,7 @@ const Hero = ({ scrollToBottom }) => {
 
   return (
     <div className="relative h-[75vh] flex flex-col services-bg overflow-hidden">
-      <Navbar />
+      <Navbar setShowResume={setShowResume} showResume={showResume} />
 
       <div className="flex-grow flex flex-col justify-center items-center px-4">
         <motion.div
