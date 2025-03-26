@@ -99,7 +99,7 @@ const Education = () => {
             "Training covering modern JavaScript, responsive design and CSS frameworks.",
           achievements: [
             "50+ hour JavaScript Mastery course",
-            "15+ projects using HTML5/CSS3/Tailwind",
+            "5+ projects using HTML5/CSS3/Tailwind",
             "Responsive websites with CSS Grid/Flexbox",
           ],
         },
