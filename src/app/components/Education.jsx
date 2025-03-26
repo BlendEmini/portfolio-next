@@ -156,7 +156,7 @@ const Education = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-gray-800 p-6 rounded-lg">
+        <div className="services-bg p-6 rounded-lg">
           {activeTab === 1 ? (
             // Special layout for Jagaad Academy (Frontend Academy tab)
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
