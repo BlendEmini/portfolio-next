@@ -27,30 +27,40 @@ const Contact = ({ bottomRef }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear errors when user types
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
 
-    // Validate on change
-    if (name === "name") {
-      setErrors((prev) => ({
-        ...prev,
-        name: value.length < 3 ? "Name must be at least 3 characters" : "",
-      }));
-    } else if (name === "email") {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      setErrors((prev) => ({
-        ...prev,
-        email: !emailRegex.test(value) ? "Please enter a valid email" : "",
-      }));
-    } else if (name === "message") {
-      setErrors((prev) => ({
-        ...prev,
-        message:
-          value.length < 12 ? "Message must be at least 12 characters" : "",
-      }));
+  const validateForm = () => {
+    const newErrors = {};
+    let isValid = true;
+    if (formData.name.length < 1) {
+      newErrors.name = "Name can't be empty";
+      isValid = false;
     }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = "Please enter a valid email";
+      isValid = false;
+    }
+
+    if (formData.message.length < 1) {
+      newErrors.message = "Message field can't be empty";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -72,14 +82,6 @@ const Contact = ({ bottomRef }) => {
     }
   };
 
-  const isFormValid = () => {
-    return (
-      formData.name.length >= 3 &&
-      !errors.email &&
-      formData.message.length >= 12
-    );
-  };
-
   const closeToast = () => {
     setToast((prev) => ({ ...prev, show: false }));
   };
@@ -94,7 +96,6 @@ const Contact = ({ bottomRef }) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          {/* <p className="text-teal-400 text-3xl font-mono mb-2">CONTACT</p> */}
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             Let's <span className="text-teal-400">Connect</span>
           </h2>
@@ -190,12 +191,8 @@ const Contact = ({ bottomRef }) => {
 
               <button
                 type="submit"
-                disabled={!isFormValid() || isSubmitting}
-                className={`flex items-center justify-center gap-2 w-full py-3 px-6 rounded-lg font-medium transition-colors ${
-                  isFormValid()
-                    ? "bg-teal-500 hover:bg-teal-600 text-white"
-                    : "bg-gray-700 text-gray-400 cursor-not-allowed"
-                }`}
+                disabled={isSubmitting}
+                className="flex items-center justify-center gap-2 w-full py-3 px-6 rounded-lg font-medium transition-colors bg-teal-500 hover:bg-teal-600 text-white"
               >
                 {isSubmitting ? (
                   "Sending..."
