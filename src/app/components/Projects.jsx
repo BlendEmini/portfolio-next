@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import sparklinggrape from "../assets/SG.png";
 import movenzia from "../assets/MZ.png";
@@ -56,24 +56,44 @@ const Projects = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const projectsPerPage = 3;
   const totalPages = Math.ceil(projects.length / projectsPerPage);
+  const projectsRef = useRef(null);
 
   const currentProjects = projects.slice(
     currentPage * projectsPerPage,
     (currentPage + 1) * projectsPerPage
   );
 
+  const scrollToProjects = () => {
+    if (projectsRef.current) {
+      const elementPosition = projectsRef.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const nextPage = () => {
     setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : prev));
+    scrollToProjects();
   };
 
   const prevPage = () => {
     setCurrentPage((prev) => (prev > 0 ? prev - 1 : prev));
+    scrollToProjects();
+  };
+
+  const goToPage = (page) => {
+    setCurrentPage(page);
+    scrollToProjects();
   };
 
   return (
     <section className="py-24 px-4 about-me">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-20">
+        <div className="mb-20" ref={projectsRef}>
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
             Selected <span className="text-teal-400">Work</span>
           </h2>
@@ -98,7 +118,7 @@ const Projects = () => {
                     index % 2 === 0 ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  <div className="relative h-80 w-full overflow-hidden rounded-lg">
+                  <div className="relative md:h-80 w-full overflow-hidden rounded-lg">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -166,7 +186,7 @@ const Projects = () => {
             {Array.from({ length: totalPages }).map((_, i) => (
               <button
                 key={i}
-                onClick={() => setCurrentPage(i)}
+                onClick={() => goToPage(i)}
                 className={`w-10 h-10 rounded-full flex items-center justify-center ${
                   currentPage === i
                     ? "bg-teal-600 text-white"
