@@ -3,18 +3,26 @@ import { motion } from "framer-motion";
 import { FiArrowRight, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useState } from "react";
 
-// Import your images
 import sparklinggrape from "../assets/SG.png";
 import movenzia from "../assets/MZ.png";
 import decorify from "../assets/DF.png";
 import inplace from "../assets/inplace.png";
+import arborea from "../assets/arborea.png";
 
 const Projects = () => {
   const projects = [
     {
+      title: "Arborea",
+      description:
+        "Working as a Frontend Developer on a custom WordPress theme built from the ground up. I'm responsible for approximately 75% of the project's current implementation, using HTML, CSS, JavaScript, and PHP. The theme is fully responsive and tailored to meet specific design and functionality requirements. The project is ongoing and continues to evolve with new features and optimizations.",
+      image: arborea,
+      tags: ["Html", "Css", "Javascript", "Php"],
+      link: "http://arborea.nohup.host/",
+    },
+    {
       title: "Inplace",
       description:
-        "Currently working as Quality Engineer and Frontend Developer, writing automated tests with Cypress and contributing to Angular-based frontend development.",
+        "Currently working as a Quality Engineer, primarily focused on writing automated tests with Cypress, with occasional contributions to Angular-based frontend development.",
       image: inplace,
       tags: ["Angular", "Cypress", "TypeScript", "Testing"],
       link: "https://inplace.it/",

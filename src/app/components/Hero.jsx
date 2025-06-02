@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Navbar from "./Navbar";
+import { SiGitlab } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const Hero = ({ scrollToBottom, showResume, setShowResume }) => {
@@ -56,10 +57,10 @@ const Hero = ({ scrollToBottom, showResume, setShowResume }) => {
           className="flex gap-6 mt-12"
         >
           <a
-            href="https://github.com/blendEmini"
+            href="https://git.jagaad.com/blend.emini"
             className="lg:text-5xl text-3xl text-white hover:text-teal-400 transition-colors"
           >
-            <FaGithub />
+            <SiGitlab />
           </a>
           <a
             href="https://linkedin.com/in/blendemini"
