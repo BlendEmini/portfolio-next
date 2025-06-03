@@ -8,9 +8,11 @@ import { motion } from "framer-motion";
 const Hero = ({ scrollToBottom, showResume, setShowResume }) => {
   const [displayText, setDisplayText] = useState("");
   const phrases = [
-    "Full Stack Developer",
-    "React Specialist",
-    "Java Enthusiast",
+    "Frontend Engineer with QA Superpowers",
+    "React & Next.js Fanatic",
+    "WordPress Theme Developer",
+    "Node.js and Java API Crafter",
+    "Clean Code and Clean UI Lover",
   ];
   const [currentPhrase, setCurrentPhrase] = useState(0);
 
