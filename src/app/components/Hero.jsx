@@ -58,13 +58,13 @@ const Hero = ({ scrollToBottom, showResume, setShowResume }) => {
         >
           <a
             href="https://git.jagaad.com/blend.emini"
-            className="lg:text-5xl text-3xl text-white hover:text-teal-400 transition-colors"
+            className="lg:text-5xl text-3xl text-white gitlab transition-colors"
           >
             <SiGitlab />
           </a>
           <a
             href="https://linkedin.com/in/blendemini"
-            className="lg:text-5xl text-3xl text-white hover:text-teal-400 transition-colors"
+            className="lg:text-5xl text-3xl text-white linkedin transition-colors"
           >
             <FaLinkedin />
           </a>

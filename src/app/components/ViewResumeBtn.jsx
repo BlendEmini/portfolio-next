@@ -4,7 +4,7 @@ const ViewResumeBtn = ({ showResume, setShowResume }) => {
   return (
     <button
       onClick={() => setShowResume(!showResume)}
-      className="relative group flex items-center justify-center gap-2 px-4 py-3 bg-teal-400 hover:bg-teal-500 text-gray-900 font-medium rounded-md transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+      className="relative whitespace-nowrap mr-3 group flex items-center justify-center gap-2 px-4 py-3 bg-teal-400 hover:bg-teal-500 text-gray-900 font-medium rounded-md transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
     >
       {/* Button text with transition */}
       <span className="relative z-10 transition-all duration-300 group-hover:tracking-wide">
