@@ -14,7 +14,6 @@ const Resume = ({ showResume, setShowResume }) => {
         onClick={() => setShowResume(false)}
       />
 
-      {/* Resume Content */}
       <div
         className={`fixed inset-0 flex items-center justify-center p-4 z-50 transition-all duration-300 ${
           showResume ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -25,7 +24,7 @@ const Resume = ({ showResume, setShowResume }) => {
             className="absolute top-4 right-4 p-2"
             onClick={() => setShowResume(false)}
           >
-            <Image className="size-6" src={Remove} alt="Close" />
+            <Image className="w-6  " src={Remove} alt="Close" />
           </button>
           <div className="p-6">
             <Image src={ResumeImg1} alt="Resume Page 1" />
