@@ -27,7 +27,7 @@ const Resume = ({ showResume, setShowResume }) => {
             <Image className="w-6  " src={Remove} alt="Close" />
           </button>
           <div className="p-6">
-            <Image src={ResumeImg1} alt="Resume Page 1" />
+            <Image src={ResumeImg1} alt="Resume Page " />
             <Image src={ResumeImg2} alt="Resume Page 2" />
           </div>
         </div>
