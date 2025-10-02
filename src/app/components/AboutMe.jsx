@@ -4,7 +4,7 @@ import avatar from "../assets/avatar3.png";
 
 const AboutMe = ({ showResume, setShowResume }) => {
   const skills = [
-    "HTML5",
+    "HTML",
     "JAVASCRIPT",
     "TYPESCRIPT",
     "CSS3",
