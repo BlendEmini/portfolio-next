@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ResumeImg1 from "../assets/1.png";
 import ResumeImg2 from "../assets/2.png";
+import ResumeImg3 from "../assets/3.png";
 import Remove from "../assets/remove.png";
 const Resume = ({ showResume, setShowResume }) => {
   return (
@@ -26,9 +27,10 @@ const Resume = ({ showResume, setShowResume }) => {
           >
             <Image className="w-6  " src={Remove} alt="Close" />
           </button>
-          <div className="p-6">
+          <div className="">
             <Image src={ResumeImg1} alt="Resume Page " />
             <Image src={ResumeImg2} alt="Resume Page " />
+            <Image src={ResumeImg3} alt="Resume Page " />
           </div>
         </div>
       </div>
