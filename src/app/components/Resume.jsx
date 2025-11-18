@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import ResumeImg1 from "../assets/1.png";
 import ResumeImg2 from "../assets/2.png";
 import ResumeImg3 from "../assets/3.png";
