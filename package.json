@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": "22.x"
+    "node": ">=18"
   },
   "dependencies": {
     "axios": "^1.12.2",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.23.22",
-    "next": "15.5.4",
+    "next": "^16.0.7",
     "nodemailer": "^7.0.6",
     "react": "^19",
     "react-dom": "^19",
