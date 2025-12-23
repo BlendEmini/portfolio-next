@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <g stroke="#E7FAF6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Monitor -->
+    <rect x="40" y="40" width="230" height="150" rx="18" />
+    <line x1="80" y1="205" x2="230" y2="205" />
+    <rect x="135" y="190" width="40" height="20" rx="6" />
+
+    <!-- Code brackets on screen -->
+    <path d="M135 95 L115 115 L135 135" />
+    <path d="M175 95 L195 115 L175 135" />
+    <line x1="155" y1="90" x2="155" y2="140" />
+
+    <!-- Checklist panel -->
+    <rect x="230" y="105" width="130" height="150" rx="18" />
+
+    <!-- Check rows -->
+    <g>
+      <polyline points="250,135 258,143 272,127" />
+      <line x1="290" y1="137" x2="340" y2="137" />
+    </g>
+    <g>
+      <polyline points="250,173 258,181 272,165" />
+      <line x1="290" y1="175" x2="340" y2="175" />
+    </g>
+    <g>
+      <polyline points="250,211 258,219 272,203" />
+      <line x1="290" y1="213" x2="340" y2="213" />
+    </g>
+
+    <!-- Gear overlapping monitor + checklist -->
+    <circle cx="255" cy="80" r="24" />
+    <circle cx="255" cy="80" r="10" />
+    <line x1="255" y1="48" x2="255" y2="38" />
+    <line x1="255" y1="122" x2="255" y2="132" />
+    <line x1="223" y1="80" x2="213" y2="80" />
+    <line x1="297" y1="80" x2="307" y2="80" />
+    <line x1="235" y1="60" x2="228" y2="53" />
+    <line x1="275" y1="60" x2="282" y2="53" />
+    <line x1="275" y1="100" x2="282" y2="107" />
+    <line x1="235" y1="100" x2="228" y2="107" />
+  </g>
+</svg>

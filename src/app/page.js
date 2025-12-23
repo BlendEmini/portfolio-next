@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import AboutMe from "./components/AboutMe";
@@ -9,6 +7,7 @@ import Contact from "./components/Contact";
 import { useRef, useState } from "react";
 import Resume from "./components/Resume";
 import Education from "./components/Education";
+import PortfolioNoticeModal from "./components/PortfolioNoticeModal";
 
 export default function Home() {
   const [showResume, setShowResume] = useState(false);
@@ -19,6 +18,7 @@ export default function Home() {
   };
   return (
     <div className="overflow-x-hidden ">
+      <PortfolioNoticeModal />
       <Resume showResume={showResume} setShowResume={setShowResume} />
       <Hero
         setShowResume={setShowResume}

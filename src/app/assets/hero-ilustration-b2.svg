@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <g stroke="#E7FAF6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main monitor -->
+    <rect x="40" y="50" width="240" height="150" rx="18" />
+    <line x1="90" y1="215" x2="230" y2="215" />
+    <rect x="145" y="200" width="30" height="20" rx="6" />
+
+    <!-- Dashboard header bar -->
+    <line x1="55" y1="75" x2="255" y2="75" />
+    <circle cx="68" cy="64" r="4" />
+    <circle cx="82" cy="64" r="4" />
+    <circle cx="96" cy="64" r="4" />
+
+    <!-- Graph / chart widgets -->
+    <rect x="60" y="90" width="90" height="45" rx="10" />
+    <polyline points="70,120 85,110 100,118 115,100 140,112" />
+
+    <rect x="165" y="90" width="90" height="45" rx="10" />
+    <line x1="180" y1="122" x2="180" y2="105" />
+    <line x1="200" y1="122" x2="200" y2="95" />
+    <line x1="220" y1="122" x2="220" y2="110" />
+
+    <!-- Status list -->
+    <rect x="60" y="145" width="195" height="45" rx="10" />
+    <polyline points="72,165 80,173 94,157" />
+    <line x1="110" y1="167" x2="240" y2="167" />
+    <polyline points="72,182 80,190 94,174" />
+    <line x1="110" y1="184" x2="220" y2="184" />
+
+    <!-- Side test panel -->
+    <rect x="245" y="100" width="115" height="130" rx="18" />
+
+    <!-- Side checks -->
+    <polyline points="260,130 268,138 282,122" />
+    <line x1="295" y1="132" x2="345" y2="132" />
+    <polyline points="260,165 268,173 282,157" />
+    <line x1="295" y1="167" x2="345" y2="167" />
+    <polyline points="260,200 268,208 282,192" />
+    <line x1="295" y1="202" x2="345" y2="202" />
+
+    <!-- Small test badge -->
+    <rect x="275" y="108" width="40" height="14" rx="6" />
+  </g>
+</svg>
